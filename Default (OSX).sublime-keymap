@@ -1,0 +1,42 @@
+[
+	{ "keys": ["super+alt+b"], "command": "toggle_side_bar" },
+	{ "keys": ["super+alt+x"], "command": "cancel_build" },
+	{ "keys": ["super+alt+i"], "command": "reindent", "args": {"single_line": false} },
+	{ 
+		"keys": ["super+alt+n"], 
+		"command": "build", 
+		"args": 
+		{
+			"build_system": "Packages/User/c++17.sublime-build", 
+			"variant": "", 
+			"choice_build_system": true, 
+			"choice_variant": true
+		}
+	},
+	{ 
+		"keys": ["super+alt+z"], 
+		"command": "build", 
+		"args": 
+		{
+			"build_system": "Packages/User/c++17.sublime-build", 
+			"variant": "Debug", 
+			"choice_build_system": true, 
+			"choice_variant": true
+		}
+	},
+	{
+	    "keys": ["super+alt+v"],
+	    "command": "set_layout",
+	    "args":
+	    {
+	        "cols": [0.0, 0.65, 1.0 ],
+	        "rows": [0.0, 0.3, 0.6, 1.0 ],
+	        "cells": [
+	            [0, 0, 1, 3],
+	            [1, 0, 2, 1],
+	            [1, 1, 2, 2],
+	            [1, 2, 2, 3]
+	        ]
+	    }
+	},
+]

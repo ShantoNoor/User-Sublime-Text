@@ -1,0 +1,7 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"open_files_in_new_window": "never",
+	"color_scheme": "Mariana.sublime-color-scheme",
+	"font_size": 14,
+}
