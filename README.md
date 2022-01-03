@@ -1,6 +1,4 @@
 # User
-#my
-=======
 ### Keymap
 - "keys": ["super+alt+b"], "command": "toggle_side_bar"
 - "keys": ["super+alt+x"], "command": "cancel_build"
