@@ -29,7 +29,18 @@
     {
       "name": "Create input.txt, output.txt and debug.txt",
       "cmd": "touch input.txt output.txt debug.txt && open input.txt output.txt debug.txt"
+    },
+    {
+      "name": "open input.txt",
+      "cmd": "open -a \"Sublime Text\" input.txt"
+    },
+    {
+      "name": "open output.txt",
+      "cmd": "open -a \"Sublime Text\" output.txt"
+    },
+    {
+      "name": "open debug.txt",
+      "cmd": "open -a \"Sublime Text\" debug.txt"
     }
   ]
-
 }
