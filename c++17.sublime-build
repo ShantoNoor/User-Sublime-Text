@@ -1,5 +1,5 @@
 {
-  "cmd" : ["g++-11 -std=c++17 -O2 $file_name -o $file_base_name && gtimeout 4s ./$file_base_name"], 
+  "cmd" : ["g++-11 -std=c++17 \"$file_name\" -o \"$file_base_name\" && gtimeout 4s ./\"$file_base_name\""], 
   "shell": true,
   "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
   "working_dir" : "$file_path",
@@ -8,23 +8,31 @@
   "variants": [
     {
      "name": "Debug",
-     "cmd": "g++-11 -std=c++17 -O2 $file_name -DDEBUG -I\"/Users/shantonoor/Library/Application Support/Sublime Text/Packages/User\" -o $file_base_name && gtimeout 4s ./$file_base_name",
+     "cmd": "g++-11 -std=c++17 -O2 \"$file_name\" -DDEBUG -I\"/Users/shantonoor/Library/Application Support/Sublime Text/Packages/User\" -o \"$file_base_name\" && gtimeout 4s ./\"$file_base_name\"",
+    },
+    {
+     "name": "Debug - No Time",
+     "cmd": "g++-11 -std=c++17 -O2 \"$file_name\" -DDEBUG -I\"/Users/shantonoor/Library/Application Support/Sublime Text/Packages/User\" -o \"$file_base_name\" && ./\"$file_base_name\"",
     },
     {
      "name": "Run in Terminal",
-     "cmd": "osascript -e 'tell app \"Terminal\" to do script \"cd $file_path && g++-11 -std=c++17 -Wshadow -O2 $file_name -o $file_base_name && echo && echo $file_name ... && echo && ./$file_base_name && echo\"'",
+     "cmd": "osascript -e 'tell app \"Terminal\" to do script \"cd $file_path && g++-11 -std=c++17 -Wshadow -O2 \"$file_name\" -o \"$file_base_name\" && echo && echo \"$file_name\" ... && echo && ./\"$file_base_name\" && echo\"'",
     },
     {
      "name": "Run in Terminal with Debug",
-     "cmd": "osascript -e 'tell app \"Terminal\" to do script \"cd $file_path && g++-11 -std=c++17 -O2 $file_name -DDEBUG -I\"/Users/shantonoor/Library/Application Support/Sublime Text/Packages/User\" -o $file_base_name && echo && echo $file_name ... && echo && ./$file_base_name && echo\"'",
+     "cmd": "osascript -e 'tell app \"Terminal\" to do script \"cd $file_path && g++-11 -std=c++17 -O2 \"$file_name\" -DDEBUG -I\"/Users/shantonoor/Library/Application Support/Sublime Text/Packages/User\" -o \"$file_base_name\" && echo && echo \"$file_name\" ... && echo && ./\"$file_base_name\" && echo\"'",
+    },
+    {
+     "name": "<input.txt - No Debug",
+     "cmd": "g++-11 -std=c++17 -O2 \"$file_name\" -I\"/Users/shantonoor/Library/Application Support/Sublime Text/Packages/User\" -o \"$file_base_name\" && gtimeout 4s ./\"$file_base_name\"<input.txt",
     },
     {
      "name": "<input.txt",
-     "cmd": "g++-11 -std=c++17 -O2 $file_name -DDEBUG -I\"/Users/shantonoor/Library/Application Support/Sublime Text/Packages/User\" -o $file_base_name && gtimeout 4s ./$file_base_name<input.txt",
+     "cmd": "g++-11 -std=c++17 -O2 \"$file_name\" -DDEBUG -I\"/Users/shantonoor/Library/Application Support/Sublime Text/Packages/User\" -o \"$file_base_name\" && gtimeout 4s ./\"$file_base_name\"<input.txt",
     },
     {
      "name": "<input.txt>output.txt",
-     "cmd": "g++-11 -std=c++17 -O2 $file_name -DDEBUG -I\"/Users/shantonoor/Library/Application Support/Sublime Text/Packages/User\" -o $file_base_name && gtimeout 4s ./$file_base_name<input.txt>output.txt",
+     "cmd": "g++-11 -std=c++17 -O2 \"$file_name\" -DDEBUG -I\"/Users/shantonoor/Library/Application Support/Sublime Text/Packages/User\" -o \"$file_base_name\" && gtimeout 4s ./\"$file_base_name\"<input.txt>output.txt",
     },
     {
       "name": "Create input.txt, output.txt and debug.txt",
